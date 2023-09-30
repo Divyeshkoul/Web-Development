@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        table, th, td {
+  border:1px solid black;
+  align-items: center;
+}
+    </style>
+    <script>
+      window.onload = function() {
+        // Get the value from localStorage
+        var value = localStorage.getItem('myValue');
+        
+        // Display the value on the page
+        var output = document.getElementById('value-output');
+        var output1 = document.getElementById('value-output1');
+        
+        const stages = ["Although often described as sub-clinical or clinically non-significant, mild anxiety can impact emotional, social and professional functioning. Mild anxiety symptoms may present as social anxiety or shyness and can be experienced in early childhood through to adulthood. If left unaddressed, mild anxiety can lead to maladaptive coping strategies or more severe mental conditions.", 
+        "People with moderate levels of anxiety have more frequent or persistent symptoms than those with mild anxiety, but still have better daily functioning than someone with severe anxiety or panic disorder. For example, people with moderate anxiety may report experiencing symptoms such as feeling on edge, being unable to control their worrying or being unable to relax several days or the majority of days in a week, but not every day. Although moderate anxiety symptoms are disruptive, people with moderate anxiety may have success in managing their anxiety with the help of a doctor or self-help strategies.",
+         "Severe anxiety is intensely debilitating, and symptoms of severe anxiety meet key diagnostic criteria for clinically-significant anxiety disorder. People with severe anxiety typically score higher on scales of distress and lower on functioning. Severe anxiety symptoms also frequently co-occur with major depression, which can contribute to greater disability. Symptoms of severe anxiety are frequent and persistent and may include increased heart rate, feelings of panic and social withdrawal. These symptoms can result in loss of work and increased health care costs. In addition, individuals with severe anxiety may turn to alcohol and drugs as a means to cope with their symptoms.",
+          "Panic level anxiety, or panic disorder, is characterized by frequent, recurring and unexpected panic attacks. A panic attack can include symptoms such as:Rapid onset of extreme fearHeart palpitations,Rapid breathing,Nausea or dizziness,Fear of death"];
+      if( value>=8){
+            output.innerText = "Mild Anxiety";
+            output1.innerText = stages[0];
+        }
+        if( value>5 &value<=7){
+            output.innerText = "Moderate Anxiety";
+            output1.innerText = stages[1];
+        }
+        if( value>3 && value<=5){
+            output.innerText = "Severe Anxiety";
+            output1.innerText = stages[2];
+        }
+        if( value<=3){
+            output.innerText = "Panic Level Anxiety";
+            output1.innerText = stages[3];
+        }
+    };
+    </script>
+  </head>
+  <body>
+    <h1>Page 2</h1>
+    <p>The value you entered on the first page was:</p>
+    <p id="value-output"></p>
+    <p id="value-output1"></p>
+    <table style=" align-items: center;">
+        <tr>
+          <th>Stage Point</th>
+          <th>Stage Discription </th>
+        </tr>
+        <tr>
+          <td>more then 8</td>
+          <td>Mild Anxiety</td>  
+        </tr>
+        <tr>
+          <td>Greater then 5 and smaler the 7</td>
+          <td>Moderate Anxiety</td>
+        </tr>
+        <tr>
+            <td>Greater then 3 and smaler the 5</td>
+            <td>Severe Anxiety</td>  
+          </tr>>
+          <tr>
+            <td>smaller the 3</td>
+            <td>Panic Level Anxiety</td>  
+          </tr>
+      </table>
+
+
+    
+  </body>
+</html>

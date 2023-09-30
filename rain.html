@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain</title>
+
+    <style>
+        body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("image/rain.gif");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1{
+  text-align: center;
+  color: rgb(214, 42, 214);
+}
+    </style>
+</head>
+<body>
+    <div class="bg">
+      <h1>The back button will appear after 10 minutes</h1>
+      <div style="background-color: #c27da1; width: 40%; height: 70%; border-radius: 50%; margin-top: 0%; margin-left: 35%">
+        <embed style="margin-left: 170px; margin-top: 150px; background-color: yellow;" name="lostmojo" src="songs/song4.mp3" width="150" height="90" loop="false" background-color="red" autostart="true">
+        <a href="https://sudeeptamrakar.com.np" 
+        target="_blank"
+        ><button style="margin-top: 30%; font-size: 40px; color: #c27da1;" id="Back" disabled>Back</button></a>
+      </div>
+      
+    </div>
+    <script>
+      var downloadButton = document.getElementById("Back");
+var counter = 60000;
+
+downloadButton.innerHTML = "Meditation is remaining for ";
+var id;
+
+
+
+id = setInterval(function() {
+    counter--;
+    if(counter < 0) {
+        downloadButton.innerHTML = "Back";
+        downloadButton.removeAttribute('disabled');
+        clearInterval(id);
+    } else {
+        downloadButton.innerHTML = "Meditation is remaining for " + counter.toString() + " seconds.";
+    }
+}, 600000);
+
+    </script>
+</body>
+</html>

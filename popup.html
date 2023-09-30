@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup</title>
+    <style>
+         h1{
+            color:green;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+            let a=document.createElement('a');
+a.target='_blank';
+a.href="index.html";
+
+//then use this code for alert
+if (window.confirm('Ok to Confirm, Cancel to Stay here'))
+{
+a.click();
+};
+        </script>
+</body>
+</html>
